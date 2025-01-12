@@ -94,7 +94,9 @@ Il progetto implementa un sistema per creare e gestire un piano cartesiano con a
 
 ### Esempio 1
 
-Con input:
+Come primo esempio abbiamo l'inserimento di due automi, seguito dall'inserimento di tre ostacoli.
+I primi due automi verranno inseriti correttamente mentre il primo ostacolo non verrà inserito perché all'internod del rettangolo che forma l'ostacolo si trova già un'automa.
+Infine verrà controllato lo stato di diversi punti e verranno stampati tutti gli automi e successivamente tutti gli ostacoli:
 
 ```sh
 c
@@ -111,7 +113,7 @@ S
 f
 ```
 
-abbiamo output:
+con seguente output:
 
 ```sh
 A
@@ -130,11 +132,11 @@ E
 
 ### Esempio 2
 
-Con input:
+In questo esempio viene controllata l'esistenza di un percorso tra il segnale e un automa, successivamente viene inserito tra i due un ostacolo che non permette al cammino di essere minimo. Successivamente si fa la stessa cosa ma con valori "specchiati":
 
 ```sh
 c
-a 1 2 1
+a 1 1 1
 e 10 2 1
 o 2 0 4 3
 e 10 2 1
@@ -144,11 +146,48 @@ e -10 2 1
 f
 ```
 
-abbiamo output:
+l'output è il seguente:
 
 ```sh
 SI
 NO
 SI
 NO
+```
+
+### Esempio 3
+
+Questo esempio mostra il funzionamento della funzione richiami.
+Vengono inseriti tre automi sul piano e viene stampato il piano. Successivamente viene chiamata la funzione richiamo nel punto **(4,4)**.
+L'automa più vicino, che ha anche il cammino minimo minore disponibile, cambierà la sua posizione in quella del punto **(4,4)**. Infine viene nuovamente stampato il piano per mostrare le modifiche.
+
+```sh
+c
+a 1 1 1
+a 2 2 11
+a 3 3 111
+S
+r 4 4 1
+S
+f
+```
+
+L'output sarà:
+
+```sh
+(
+1: 1,1
+11: 2,2
+111: 3,3
+)
+[
+]
+(
+1: 1,1
+11: 2,2
+111: 4,4
+)
+[
+]
+
 ```

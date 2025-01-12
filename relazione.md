@@ -158,17 +158,17 @@ NO
 ### Esempio 3
 
 Questo esempio mostra il funzionamento della funzione richiami.
-Vengono inseriti tre automi sul piano e viene stampato il piano. Successivamente viene chiamata la funzione richiamo nel punto **(4,4)**.
-L'automa più vicino, che ha anche il cammino minimo minore disponibile, cambierà la sua posizione in quella del punto **(4,4)**. Infine viene nuovamente stampato il piano per mostrare le modifiche.
+Vengono inseriti tre automi sul piano e viene stampata la posizione degli automi con prefisso α. Successivamente viene chiamata la funzione richiamo nel punto **(4,4)**.
+L'automa più vicino, che ha anche il cammino minimo minore disponibile, cambierà la sua posizione in quella del punto **(4,4)**. Infine viene nuovamente stampata la posizione degli automi con prefisso α per mostrare le modifiche.
 
 ```sh
 c
 a 1 1 1
 a 2 2 11
 a 3 3 111
-S
+p 1
 r 4 4 1
-S
+p 1
 f
 ```
 
@@ -180,14 +180,10 @@ L'output sarà:
 11: 2,2
 111: 3,3
 )
-[
-]
 (
 1: 1,1
 11: 2,2
 111: 4,4
 )
-[
-]
 
 ```

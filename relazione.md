@@ -69,9 +69,9 @@ Il progetto implementa un sistema per creare e gestire un piano cartesiano con a
   - La funzione stato(x, y) itera tra tutti gli automi e tra tutti gli ostacoli per determinare se si trovano in quel punto attraverso un controllo delle coordinate.
 
 - **Scelte Scartate**
-  - Algoritmo di tipo Best-First-Search per la ricerca di un cammino minimo. l'algoritmo permetteva di trovare in modo iterativo il percorso tra la sorgente e un automa ma in alcuni casi veniva resituito un percorso che non fosse minimo nonostante ne fosse presente un altro minimo.
-  - Rappresentazione degli automi come struttura Automa(Punto{a, b int}, nome string), scartata poiché non permette una buona ottimizzazione del codice, diversamente dall'uso delle mappe.
-  - Uso di una mappa posizioni[Punto]string che permetteva di assegnare ad ogni punto un carattere per permettere una più veloce esecuzione della funzione stato, avrebbe permesso un tempo di accesso **O(1)**, permettendo una velocità maggiore della funzione `stato()` e nella ricerca dei vicini ma le dimensioni del piano si estendono in Z × Z rendendo possibile l'inserimento di ostacoli di dimensioni tali da rendere impossibile il mantenimento della mappa in memoria centrale. È importante precisare che questa strategia sarebbe molto efficente in caso di piano con molti ostacoli ma piccoli.
+  - Algoritmo di tipo Best-First-Search per la ricerca di un cammino. l'algoritmo permetteva di trovare in modo iterativo il percorso tra la sorgente e un automa ma in alcuni casi veniva resituito un percorso che non fosse minimo nonostante ne fosse presente un altro minimo.
+  - Rappresentazione degli automi come struttura Automa(Punto{a, b int}, nome string), scartata poiché non permette una buona ottimizzazione del codice.
+  - Uso di una mappa `posizioni [Punto]string` che permetteva di assegnare ad ogni punto un carattere per permettere una più veloce esecuzione della funzione stato, avrebbe permesso un tempo di accesso **O(1)**, permettendo una velocità maggiore della funzione `stato()` e nella ricerca dei vicini ma le dimensioni del piano si estendono in Z × Z rendendo possibile l'inserimento di ostacoli di dimensioni tali da rendere impossibile il mantenimento della mappa in memoria centrale. È importante precisare che questa strategia sarebbe molto efficente in caso di piano con molti ostacoli ma piccoli.
 
 ### Calcoli relativi ai costi delle Operazioni
 

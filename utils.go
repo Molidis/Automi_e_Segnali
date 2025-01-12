@@ -29,6 +29,11 @@ type ostacoli struct {
 	head *ostacolo
 }
 
+// inserisce un ostacolo in testa alla lista
+func (l *ostacoli) insert(ost Ostacolo) {
+	l.head = &ostacolo{ost, l.head}
+}
+
 // ritorna la distanza di Manhattan tra due punti
 func manhattanDistance(start, goal Punto) int {
 	return intAbs(start.x-goal.x) + intAbs(start.y-goal.y)
@@ -40,11 +45,6 @@ func intAbs(x int) int {
 		return -x
 	}
 	return x
-}
-
-// inserisce un ostacolo in testa alla lista
-func (l *ostacoli) insert(ost Ostacolo) {
-	l.head = &ostacolo{ost, l.head}
 }
 
 // PuntoHeap rappresenta una coda di punti

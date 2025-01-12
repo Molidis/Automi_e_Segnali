@@ -18,26 +18,28 @@ type piano struct {
 	ostacoli *ostacoli
 }
 
-// calcola la distanza di Manhattan tra due punti
-func manhattanDistance(start, goal Punto) int {
-	return intAbs(start.x-goal.x) + intAbs(start.y-goal.y)
-}
-
-// intAbs restituisce il valore assoluto di x, nella libreria <math> c'è già il metodo math.Abs ma solo per i float64, invece di svolgere tre cast ho preferito implementare la funzione con int
-func intAbs(x int) int {
-	if x < 0 {
-		return -x
-	}
-	return x
-}
-
+// ostacolo rappresenta un ostacolo nel piano nella lista degli ostacoli
 type ostacolo struct {
 	ost  Ostacolo
 	next *ostacolo
 }
 
+// ostacoli rappresenta una lista di ostacoli
 type ostacoli struct {
 	head *ostacolo
+}
+
+// ritorna la distanza di Manhattan tra due punti
+func manhattanDistance(start, goal Punto) int {
+	return intAbs(start.x-goal.x) + intAbs(start.y-goal.y)
+}
+
+// intAbs restituisce il valore assoluto di x, nella libreria <math> c'è già il metodo math.Abs ma solo per i float64, invece di svolgere tre cast ho preferito implementare la funzione per interi
+func intAbs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
 }
 
 // inserisce un ostacolo in testa alla lista

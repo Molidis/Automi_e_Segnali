@@ -66,6 +66,12 @@ func (p piano) findPercorso(a, b int, w string) bool {
 		return false
 	}
 
+	// dato che il numero di passi sarebbe 0 e il numero di passi dev'essere maggiore o uguale a 1 per essere un percorso, nel caso la distanza sia 0 restituisce false
+	// questo implica che quando verrà fatto un richiamo, un automa già in questo punto non verrà considerato
+	if manhattanDistance(Punto{a, b}, goal) == 0 {
+		return false
+	}
+
 	// controlla se il punto{a, b} è un ostacolo, se lo è restituisce false
 	if p.stato(a, b) == "O" {
 		return false

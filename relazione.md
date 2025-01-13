@@ -83,6 +83,10 @@ Il progetto implementa un sistema per creare e gestire un piano cartesiano con a
   - Ricerca automi con un prefisso specifico alpha: **O(a*p)** dove **a** è il numero di automi nel piano e **p** è la lunghezza in caratteri del prefisso.
   - Richiamo degli automi: il ciclo `for` itera su tutti gli automi **O(a*c)** con **a** numero di automi e **c** è il numero di caratteri del prefisso. Dopodichè su tutti quelli che hanno il prefisso alpha controlla se esiste un percorso usando la funzione `esistePercorso(...)`, che ha costo **O(n\*(a+o)+n\*logn)**.
 
+&nbsp;
+
+&nbsp;
+
 - **Costi in Spazio**
   - Memorizzazione del piano: **O(o+a)** dove **o** è il numero degli ostacoli del piano **a** è il numero di automi nel piano.
   - Memorizzazione degli ostacoli: **O(o)** dove **o** è il numero di ostacoli presenti sul piano.
@@ -128,6 +132,12 @@ E
 ]
 ```
 
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
 ### Esempio 2
 
 In questo esempio viene controllata l'esistenza di un percorso tra il segnale e un automa, successivamente viene inserito tra i due un ostacolo che non permette al cammino di essere minimo. Successivamente si fa la stessa cosa ma con valori "specchiati":
@@ -169,6 +179,14 @@ r 4 4 1
 p 1
 f
 ```
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 L'output sarà:
 

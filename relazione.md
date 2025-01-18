@@ -20,7 +20,7 @@ I 5 file presenti nel progetto sono:
 Per compilare il programma, eseguire il seguente comando nella directory del progetto in cui sono presenti i file sorgente `.go`:
 
 ```sh
-go mod init soluzione
+go mod init solution
 go mod tidy
 go build
 ```
